@@ -1,0 +1,2 @@
+// Slider
+console.log('slider');

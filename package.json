@@ -24,5 +24,12 @@
   "bugs": {
     "url": "https://github.com/araujowebdev/Gulp/issues"
   },
-  "homepage": "https://github.com/araujowebdev/Gulp#readme"
+  "homepage": "https://github.com/araujowebdev/Gulp#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "gulp-babel": "^8.0.0"
+  }
 }

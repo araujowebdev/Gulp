@@ -26,10 +26,11 @@ function compileSass() {
 }
 
 // gulp task for SASS function
-gulp.task('sass', function (done) {
-  compileSass();
-  done();
-});
+// gulp.task('sass', function (done) {
+//   compileSass();
+//   done();
+// });
+exports.compileSass = compileSass;
 
 // Concat JS
 function gulpJS() {
@@ -46,7 +47,8 @@ function gulpJS() {
     .pipe(browserSync.stream());
 }
 
-gulp.task('mainjs', gulpJS);
+// gulp.task('mainjs', gulpJS);
+exports.gulpJS = gulpJS;
 
 // JS Plugins
 function pluginJS() {
@@ -61,7 +63,8 @@ function pluginJS() {
     .pipe(browserSync.stream());
 }
 
-gulp.task('pluginjs', pluginJS);
+// gulp.task('pluginjs', pluginJS);
+exports.pluginJS = pluginJS;
 
 // function to start the browser server
 function browser() {
@@ -73,7 +76,8 @@ function browser() {
 }
 
 // task to start the browser-sync
-gulp.task('browser-sync', browser);
+// gulp.task('browser-sync', browser);
+exports.browser = browser;
 
 // gulp watch function
 function watch() {
@@ -84,10 +88,8 @@ function watch() {
 }
 
 // starts watch task
-gulp.task('watch', watch);
+// gulp.task('watch', watch);
+exports.watch = watch;
 
 // default gulp task that starts watch and browser-sync
-gulp.task(
-  'default',
-  gulp.parallel('watch', 'browser-sync', 'sass', 'mainjs', 'pluginjs'),
-);
+exports.default = gulp.parallel(watch, browser, compileSass, gulpJS, pluginJS);
